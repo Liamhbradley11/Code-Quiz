@@ -33,12 +33,12 @@ var questions = [
          B:"neck, jet", 
          C:"jet,check", 
          D:"net, jet", 
-         correcct: "neck, jet"
+         correct: "neck, jet"
         }
     ];
 
-var beginPage = document.getElementById("begin");
-var beginButton = document.getElementById("begin-btn")
+var startPage = document.getElementById("begin");
+var startButton = document.getElementById("begin-btn")
 
 var qPage = document.getElementById("question-pg");
 var question = document.getElementById("questions");
@@ -46,3 +46,13 @@ var buttonA = document.getElementById("optionA");
 var buttonB = document.getElementById("optionB");
 var buttonC = document.getElementById("optionC");
 var buttonD = document.getElementById("optionD");
+
+startButton.addEventListener("click", startQuiz);
+buttonA.addEventListener("click", answerOnClick("A"));
+buttonB.addEventListener("click", answerOnClick("B"));
+buttonC.addEventListener("click", answerOnClick("C"));
+buttonD.addEventListener("click", answerOnClick("D"));
+nameSubmitButton.addEventListener("click", storeName);
+goBack.addEventListener("click", goBackPage);
+clearScore.addEventListener("click", clearScores);
+

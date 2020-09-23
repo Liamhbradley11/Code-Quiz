@@ -22,11 +22,11 @@
     <main class="container">
       <div class="row">
         <div class="col-lg-12">
-          <div class="card mx-auto mt-5 text-center" style="width: 50rem" id="begin">
+          <div class="card mx-auto mt-5 text-center" style="width: 50rem" id="start">
             <div class="card body">
               <h5 class="card-title">Are you the ultimate Ariana Grande fan?</h5>
               <p class="card-text">Test your knowledge on all things Ariana!</p>
-              <button type="button" class="btn btn-info mt-3 mb-3" id="begin-btn">Begin!</button>
+              <button type="button" class="btn btn-info mt-3 mb-3" id="start-btn">Begin!</button>
             <br>
             <br>
             <br>
@@ -47,8 +47,36 @@
       </div>        
     </div>
       </div>
-    </main>
-
+    <div class="card mx-auto mt-5" style="width: 50rem" id="scorePage">
+      <div class="card-body mx-auto">
+          <h5 class="card-title text-center">Join the High Score Board!</h5>
+          <p class="card-text text-center">Your final score: <span id=score></span></p>
+          <form class="form-inline">
+              <div class="mx-auto">
+                  <div class="form-group mx-sm-3 mb-2">
+                      <label for="name" class="sr-only"></label>
+                      <input type="text" class="form-control" id="userName" placeholder="Enter Your Name Here">
+                  </div>
+                  <div class="text-center">
+                      <button class="btn btn-info mb-2" id="nameSubmitButton">Submit</button>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+  <div class="card mx-auto mt-5" style="width: 50rem" id="highScorePage">
+    <div class="card-body text-center">
+        <h5 class="card-title text-center">High Score Leaderboard</h5>
+        <ul class="list-group" id="scoreList">
+            <!-- <li class="list-group-item">Score/Name</li> -->
+        </ul>
+        <button class="btn btn-info mb-2" id="goBack">Go Back</button>
+        <button class="btn btn-info mb-2" id="clearScore">Clear High Scores</button>
+    </div>
+</div>                          
+</div>
+</div>
+</main>
 
 
 
