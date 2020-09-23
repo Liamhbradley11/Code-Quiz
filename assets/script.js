@@ -47,6 +47,16 @@ var buttonB = document.getElementById("optionB");
 var buttonC = document.getElementById("optionC");
 var buttonD = document.getElementById("optionD");
 
+var scorePage = document.getElementById("scorePage");
+var score = document.getElementById("score");
+var userName = document.getElementById("userName");
+var nameSubmitButton = document.getElementById("nameSubmitButton");
+
+var highScorePage = document.getElementById("highScorePage");
+var scoreList = document.getElementById("scoreList");
+var goBack = document.getElementById("goBack");
+var clearScore = document.getElementById("clearScore");
+
 startButton.addEventListener("click", startQuiz);
 buttonA.addEventListener("click", answerOnClick("A"));
 buttonB.addEventListener("click", answerOnClick("B"));
