@@ -66,3 +66,66 @@ nameSubmitButton.addEventListener("click", storeName);
 goBack.addEventListener("click", goBackPage);
 clearScore.addEventListener("click", clearScores);
 
+var totalSecondsAllowed = 45;
+var secondsLeft;
+var timerHandle;
+var scoreCounter = 0;
+var currentIndex = 0;
+
+qPage.style.display = "none";
+
+function setSecondsLeft(seconds) {
+    secondsLeft = seconds;
+    console.log(secondsLeft);
+}
+
+function startTimer() {
+    setSecondsLeft(totalSecondsAllowed);
+    timerHandle = setInterval(function() {
+        setSecondsLeft(secondsLeft-1);
+        if (secondsLeft === 0) {
+            clearInterval(timerHandle);
+        }
+    }, 1000);
+}
+
+
+function startQuiz(){
+    console.log("Quiz started!");
+    promptQuestion();
+    startTimer();
+    startPage.style.display = "none";
+}
+//prompt the questions
+function promptQuestion(){
+    qPage.style.display = "block";
+    var currentQ = questionText[currentIndex];
+    question.textContent = currentQ.question;
+    buttonA.textContent = currentQ.A;
+    buttonB.textContent = currentQ.B;
+    buttonC.textContent = currentQ.C;
+    buttonD.textContent = currentQ.D;
+}
+//check answers
+function answerOnClick(answerId) {
+    return function(event) {
+        if (questionText[currentIndex].correct === answerId) {
+            scoreCounter = scoreCounter + 10;
+        } else {
+            console.log("Time deduct!")
+            // setSecondsLeft(secondsLeft - 5);
+        }
+        currentIndex++;
+        if (currentIndex < questionText.length) {
+            promptQuestion();
+        } else {
+            finishQuiz();
+        }
+    }
+}
+//quiz ends
+function finishQuiz() {
+    console.log("Quiz finished!")
+    clearInterval(timerHandle);
+    showScore();
+}
