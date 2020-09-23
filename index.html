@@ -5,33 +5,53 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link rel="stylesheet" href="/assets/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <title>Ariana Grande Fan Quiz</title>
 
+    <style>
+      body {
+      background-image: url(https://www.udiscovermusic.com/wp-content/uploads/2019/03/Ariana-Grande-2018-2019-press-shot-web-optimised-1000.jpg);
+      }
+      </style>
 
-    <title>Code Quiz</title>
   </head>
   <body>
-      
     <main class="container">
-<div class="card" style="width: 18rem;">
-        <div id="question-container" class="hide">
-            <div class="col d-flex justify-content-center">
-            <div id="question">Question</div>
-            <div id="anwer-buttons" class= "btn-grid">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 1</button>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card mx-auto mt-5 text-center" style="width: 50rem" id="begin">
+            <div class="card body">
+              <h5 class="card-title">Are you the ultimate Ariana Grande fan?</h5>
+              <p class="card-text">Test your knowledge on all things Ariana!</p>
+              <button type="button" class="btn btn-info mt-3 mb-3" id="begin-btn">Begin!</button>
             </div>
-        </div>
-        <div class="controls">
-            <button id="start-btn" class="start-btn btn">Start</button>
-            <button id="next-btn" class="next-btn btn hide">Start</button>
-        </div>
+          </div>
+            <div class="card mx-auto mt-5" style="width: 50rem" id="question-pg">
+              <div class="cardbody">
+                <h5 class="card-title text-center">Ariana Grande Quiz</h5>
+                <p class="card-text text-center" id="questions">Questions here</p>
+                <button type="button" class="btn btn-danger mt-3 mb-3" id="optionA">Answer A</A></button>
+                <br>
+                <button type="button" class="btn btn-danger mt-3 mb-3" id="optionA">Answer B</A></button>
+                <br>
+                <button type="button" class="btn btn-danger mt-3 mb-3" id="optionA">Answer C</A></button>
+                <br>
+                <button type="button" class="btn btn-danger mt-3 mb-3" id="optionA">Answer D</A></button>
+
+              </div>
+      </div>        
     </div>
-</div>
+      </div>
     </main>
+
+
+
+
+
+    <!-- <div= class="container"> -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
