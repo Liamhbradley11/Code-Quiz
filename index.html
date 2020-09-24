@@ -5,91 +5,99 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="/assets/style.css">
-    <!-- Bootstrap CSS -->
+    <!-- Linked sheets -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    
-    <title>Ariana Grande Fan Quiz</title>
+    <link rel="stylesheet" href="style.css">
 
+    <title>Code Quiz</title>
     <style>
-      body {
-      background-image: url(https://www.udiscovermusic.com/wp-content/uploads/2019/03/Ariana-Grande-2018-2019-press-shot-web-optimised-1000.jpg);
-      }
-      </style>
-
+    .button {
+  background-color: #1c87c9;
+  -webkit-border-radius: 60px;
+  border-radius: 60px;
+  border: none;
+  color: #eeeeee;
+  cursor: pointer;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 20px;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+}
+        </style>
   </head>
   <body>
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">Time Left: <span id="timerDisplay"></span></span>
+        <button type="button" class="button" id="viewHighScore">High Scores</button>
+    </nav>
     <main class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="card mx-auto mt-5 text-center" style="width: 50rem" id="start">
-            <div class="card body">
-              <h5 class="card-title">Are you the ultimate Ariana Grande fan?</h5>
-              <p class="card-text">Test your knowledge on all things Ariana!</p>
-              <button type="button" class="btn btn-info mt-3 mb-3" id="start-btn">Begin!</button>
-            <br>
-            <br>
-            <br>
-          </div>
-          </div>
-            <div class="card mx-auto mt-5" style="width: 50rem" id="question-pg">
-              <div class="cardbody">
-                <h5 class="card-title text-center">Ariana Grande Quiz</h5>
-                <p class="card-text text-center" id="questions">Questions here</p>
-                <button type="button" class="btn btn-danger mt-3 mb-3" id="optionA">Answer A</A></button>
-                <br>
-                <button type="button" class="btn btn-danger mt-3 mb-3" id="optionA">Answer B</A></button>
-                <br>
-                <button type="button" class="btn btn-danger mt-3 mb-3" id="optionA">Answer C</A></button>
-                <br>
-                <button type="button" class="btn btn-danger mt-3 mb-3" id="optionA">Answer D</A></button>
-              </div>
-      </div>        
-    </div>
-      </div>
-    <div class="card mx-auto mt-5" style="width: 50rem" id="scorePage">
-      <div class="card-body mx-auto">
-          <h5 class="card-title text-center">Join the High Score Board!</h5>
-          <p class="card-text text-center">Your final score: <span id=score></span></p>
-          <form class="form-inline">
-              <div class="mx-auto">
-                  <div class="form-group mx-sm-3 mb-2">
-                      <label for="name" class="sr-only"></label>
-                      <input type="text" class="form-control" id="userName" placeholder="Enter Your Name Here">
-                  </div>
-                  <div class="text-center">
-                      <button class="btn btn-info mb-2" id="nameSubmitButton">Submit</button>
-                  </div>
-              </div>
-          </form>
-      </div>
-  </div>
-  <div class="card mx-auto mt-5" style="width: 50rem" id="highScorePage">
-    <div class="card-body text-center">
-        <h5 class="card-title text-center">High Score Leaderboard</h5>
-        <ul class="list-group" id="scoreList">
-            <!-- <li class="list-group-item">Score/Name</li> -->
-        </ul>
-        <button class="btn btn-info mb-2" id="goBack">Go Back</button>
-        <button class="btn btn-info mb-2" id="clearScore">Clear High Scores</button>
-    </div>
-</div>                          
-</div>
-</div>
-</main>
+        <div class="row">
+            <div class="col d-flex">
+                <div class="card mx-auto mt-5 text-center" style="width: 50rem" id="start">
+                    <div class="card-body">
+                        <h5 class="card-text">Are you the ultimate Ariana Grande fan?</h5>
+                        <p class="bg-light text-black-50">Test your knowledge on all things Ariana!</p>
+                        <button type="button" class="button" id="start-btn">Start Quiz!</button>
+                    </div>
+                </div>
+                <div class="card mx-auto mt-5" style="width: 50rem" id="question-pg">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Ariana Grande Quiz</h5>
+                        <p class="card-text text-center" id="question">Quiz questions</p>
+                        <button type="button" class="button" id="optionA">Answer A</button>
+                        <br>
+                        <br>
+                        <button type="button" class="button" id="optionB">Answer B</button>
+                        <br>
+                        <br>
+                        <button type="button" class="button" id="optionC">Answer C</button>
+                        <br>
+                        <br>
+                        <button type="button" class="button" id="optionD">Answer D</button>
+                        <p class="card-text text-center" id="answerFlag"></p>
+                    </div>
+                </div>
+                <!-- Highscore Initials -->
+                <div class="card mx-auto mt-5" style="width: 50rem" id="scorePage">
+                    <div class="card-body mx-auto">
+                        <h5 class="card-title text-center">Join the High Score Board!</h5>
+                        <p class="card-text text-center">Final Score <span id=score></span></p>
+                        <form class="form-inline">
+                            <div class="mx-auto">
+                                <div class="form-group mx-sm-3 mb-2">
+                                    <label for="name" class="sr-only"></label>
+                                    <input type="text" class="form-control" id="userName" placeholder="Name">
+                                </div>
+                                <div class="text-center">
+                                    <button class="button" id="nameSubmitButton">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Highscores -->
+                <div class="card mx-auto mt-5" style="width: 50rem" id="highScorePage">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-center">Ultimate Ariana Fans</h5>
+                        <ul class="list-group" id="scoreList">
 
+                            <!-- <li class="list-group-item">Score/Name</li> -->
+                        </ul>
+                        <button class="button" id="goBack">Go Back</button>
+                        <button class="button" id="clearScore">Clear High Scores</button>
+                    </div>
+                </div>                          
+            </div>
+        </div>
+    </main>
 
-
-
-    <!-- <div= class="container"> -->
-
-    <!-- Optional JavaScript -->
+    <!-- JavaScript -->
+    <script src="./assets/script.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  
-    <!-- Add JavaScript-->
-    <script src="/assets/script.js"></script>
-</body>
+  </body>
 </html>

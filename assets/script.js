@@ -1,102 +1,111 @@
-var questions = [
-    
-        {questions: "What was Ariana Grande's third studio album titled?",
-
-        A:"Dangerous Woman", 
-        B:"Yours Truly", 
-        C:"Sweetener", 
-        D:"Thank U, Next", 
-        correct: "Dangerous Woman"
-    },
-
-        {questions:"What year was Ariana Grande born?",
-
-        A:"1994",
-        B:"1990",
-        C:"1996",
-        D:"1993", 
-        correct: "1993"
-    },
-
-        {questions: "What is Ariana Grande's net worth?",
-
-        A:"75 million", 
-        B:"100 million", 
-        C:"68 million", 
-        D:"20 million", 
-        correct: "100 million"
-    },
-
-        {questions: "Finish the lyric.  Look at my _____, look at my _____. Ain't got enough money to pay me respect.",
-
-        A:"neck, check",
-         B:"neck, jet", 
-         C:"jet,check", 
-         D:"net, jet", 
-         correct: "neck, jet"
-        }
-    ];
-
-var startPage = document.getElementById("begin");
-var startButton = document.getElementById("begin-btn")
+var startPage = document.getElementById("start");
+var startButton = document.getElementById("start-btn")
+// for the questions 
 
 var qPage = document.getElementById("question-pg");
-var question = document.getElementById("questions");
+var question = document.getElementById("question");
 var buttonA = document.getElementById("optionA");
 var buttonB = document.getElementById("optionB");
 var buttonC = document.getElementById("optionC");
 var buttonD = document.getElementById("optionD");
+
+// to enter name for high score
 
 var scorePage = document.getElementById("scorePage");
 var score = document.getElementById("score");
 var userName = document.getElementById("userName");
 var nameSubmitButton = document.getElementById("nameSubmitButton");
 
+//highscore
+
 var highScorePage = document.getElementById("highScorePage");
 var scoreList = document.getElementById("scoreList");
 var goBack = document.getElementById("goBack");
 var clearScore = document.getElementById("clearScore");
 
-startButton.addEventListener("click", startQuiz);
-buttonA.addEventListener("click", answerOnClick("A"));
-buttonB.addEventListener("click", answerOnClick("B"));
-buttonC.addEventListener("click", answerOnClick("C"));
-buttonD.addEventListener("click", answerOnClick("D"));
-nameSubmitButton.addEventListener("click", storeName);
-goBack.addEventListener("click", goBackPage);
-clearScore.addEventListener("click", clearScores);
 
-var totalSecondsAllowed = 45;
+var viewHighScore = document.getElementById("viewHighScore");
+var timerDisplay = document.getElementById("timerDisplay");
+var answerFlag = document.getElementById("answerFlag");
+
+var totalSecondsAllowed = 60;
 var secondsLeft;
 var timerHandle;
 var scoreCounter = 0;
 var currentIndex = 0;
 
-qPage.style.display = "none";
+var questionText = [
+    
+    {question: "What was Ariana Grande's third studio album titled?",
 
+    A:"Dangerous Woman", 
+    B:"Yours Truly", 
+    C:"Sweetener", 
+    D:"Thank U, Next", 
+    correct: "A"
+},
+
+    {question:"What year was Ariana Grande born?",
+
+    A:"1994",
+    B:"1990",
+    C:"1996",
+    D:"1993", 
+    correct: "D"
+},
+
+    {question: "What is Ariana Grande's net worth?",
+
+    A:"75 million", 
+    B:"100 million", 
+    C:"68 million", 
+    D:"20 million", 
+    correct: "B"
+},
+
+    {question: "Finish the lyric.  Look at my _____, look at my _____. Ain't got enough money to pay me respect.",
+
+     A:"neck, check",
+     B:"neck, jet", 
+     C:"jet,check", 
+     D:"net, jet", 
+     correct: "B"
+    }
+];
+
+
+// Set hidden pages to not display
+qPage.style.display = "none";
+scorePage.style.display = "none";
+highScorePage.style.display = "none";
+
+// Timer Functions
 function setSecondsLeft(seconds) {
     secondsLeft = seconds;
-    console.log(secondsLeft);
+    timerDisplay.textContent = secondsLeft;
 }
 
 function startTimer() {
     setSecondsLeft(totalSecondsAllowed);
     timerHandle = setInterval(function() {
         setSecondsLeft(secondsLeft-1);
-        if (secondsLeft === 0) {
+        if (secondsLeft < 0) {
+            timerDisplay.textContent = "0";
             clearInterval(timerHandle);
+            alert("You ran out of time!");
+            finishQuiz();
         }
     }, 1000);
 }
 
-
+// Start the quiz
 function startQuiz(){
-    console.log("Quiz started!");
     promptQuestion();
     startTimer();
     startPage.style.display = "none";
 }
-//prompt the questions
+
+// Prompt Questions
 function promptQuestion(){
     qPage.style.display = "block";
     var currentQ = questionText[currentIndex];
@@ -106,14 +115,16 @@ function promptQuestion(){
     buttonC.textContent = currentQ.C;
     buttonD.textContent = currentQ.D;
 }
-//check answers
+
+// check answers 
 function answerOnClick(answerId) {
-    return function(event) {
+    return function(event){
         if (questionText[currentIndex].correct === answerId) {
             scoreCounter = scoreCounter + 10;
+            answerFlag.textContent = "Yas Queen, you got it :)!";
         } else {
-            console.log("Time deduct!")
-            // setSecondsLeft(secondsLeft - 5);
+            setSecondsLeft(secondsLeft - 5);
+            answerFlag.textContent = "Sorry Queen, you're wrong :(";
         }
         currentIndex++;
         if (currentIndex < questionText.length) {
@@ -123,9 +134,83 @@ function answerOnClick(answerId) {
         }
     }
 }
-//quiz ends
+
+
+// end quiz 
 function finishQuiz() {
-    console.log("Quiz finished!")
     clearInterval(timerHandle);
+    timerDisplay.textContent = "0";
+    answerFlag.textContent = " ";
     showScore();
 }
+
+// display the score for the user
+function showScore(){
+    qPage.style.display = "none";
+    scorePage.style.display = "block";
+    score.textContent = scoreCounter;
+}
+
+// put name on leaderboard
+function storeName(event){
+    event.preventDefault();
+    var nameInput = userName.value
+    if (nameInput !== ""){
+        var nameScore = nameInput + " - " + scoreCounter;
+        localStorage.setItem("name-score", nameScore);
+        userName.value = "";
+        showHighScores();
+    } else {
+        alert("Please enter your name")
+    }
+}
+
+// high score page 
+function showHighScores(){
+    scorePage.style.display = "none";
+    highScorePage.style.display = "block";
+    nameScore = localStorage.getItem("name-score");
+    var listEl = document.createElement("p");
+    listEl.textContent = nameScore;
+    scoreList.appendChild(listEl);
+
+}
+
+// return 
+function goBackPage(){
+    qPage.style.display = "none";
+    scorePage.style.display = "none";
+    highScorePage.style.display = "none";
+    startPage.style.display = "block";
+    answerFlag.textContent = " ";
+    setSecondsLeft(0);
+    scoreCounter = 0;
+    currentIndex = 0;
+}
+
+// clear the high score list 
+function clearScores(){
+    scoreList.textContent = "";
+}
+
+// high scores list 
+function viewScores(){
+    startPage.style.display = "none";
+    qPage.style.display = "none";
+    scorePage.style.display = "none";
+    highScorePage.style.display = "block";
+    clearInterval(timerHandle);
+    setSecondsLeft(0);
+}
+
+
+// event listeners 
+startButton.addEventListener("click", startQuiz);
+buttonA.addEventListener("click", answerOnClick("A"));
+buttonB.addEventListener("click", answerOnClick("B"));
+buttonC.addEventListener("click", answerOnClick("C"));
+buttonD.addEventListener("click", answerOnClick("D"));
+nameSubmitButton.addEventListener("click", storeName);
+goBack.addEventListener("click", goBackPage);
+clearScore.addEventListener("click", clearScores);
+viewHighScore.addEventListener("click", viewScores);
