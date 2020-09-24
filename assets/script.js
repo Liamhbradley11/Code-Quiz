@@ -105,7 +105,6 @@ function startQuiz(){
     startPage.style.display = "none";
 }
 
-// Prompt Questions
 function promptQuestion(){
     qPage.style.display = "block";
     var currentQ = questionText[currentIndex];

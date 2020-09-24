@@ -7,30 +7,15 @@
 
     <!-- Linked sheets -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/style.css">
 
-    <title>Code Quiz</title>
-    <style>
-    .button {
-  background-color: #1c87c9;
-  -webkit-border-radius: 60px;
-  border-radius: 60px;
-  border: none;
-  color: #eeeeee;
-  cursor: pointer;
-  display: inline-block;
-  font-family: sans-serif;
-  font-size: 20px;
-  padding: 10px 10px;
-  text-align: center;
-  text-decoration: none;
-}
-        </style>
+    <title>Ariana Grande Quiz</title>
+   
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-dark bg-dark">
         <span class="navbar-brand mb-0 h1">Time Left: <span id="timerDisplay"></span></span>
-        <button type="button" class="button" id="viewHighScore">High Scores</button>
+        <button type="button" class="button glow-button" id="viewHighScore">High Scores</button>
     </nav>
     <main class="container">
         <div class="row">
@@ -39,23 +24,23 @@
                     <div class="card-body">
                         <h5 class="card-text">Are you the ultimate Ariana Grande fan?</h5>
                         <p class="bg-light text-black-50">Test your knowledge on all things Ariana!</p>
-                        <button type="button" class="button" id="start-btn">Start Quiz!</button>
+                        <button type="button" class="button glow-button" id="start-btn">Start Quiz!</button>
                     </div>
                 </div>
                 <div class="card mx-auto mt-5" style="width: 50rem" id="question-pg">
                     <div class="card-body">
                         <h5 class="card-title text-center">Ariana Grande Quiz</h5>
                         <p class="card-text text-center" id="question">Quiz questions</p>
-                        <button type="button" class="button" id="optionA">Answer A</button>
+                        <button type="button" class="button glow-button" id="optionA">Answer A</button>
                         <br>
                         <br>
-                        <button type="button" class="button" id="optionB">Answer B</button>
+                        <button type="button" class="button glow-button" id="optionB">Answer B</button>
                         <br>
                         <br>
-                        <button type="button" class="button" id="optionC">Answer C</button>
+                        <button type="button" class="button glow-button" id="optionC">Answer C</button>
                         <br>
                         <br>
-                        <button type="button" class="button" id="optionD">Answer D</button>
+                        <button type="button" class="button glow-button" id="optionD">Answer D</button>
                         <p class="card-text text-center" id="answerFlag"></p>
                     </div>
                 </div>
