@@ -14,12 +14,12 @@ Test your knowledge and find out if you are Ariana Grande's ultimate fan!  You h
 * Google Fonts
 
 ## **Visuals**
-* ![alt text](https://i.paste.pics/4a4e2820f005780e71247f21f04c4e42.png )
-* ![alt text](https://i.paste.pics/a8192343e1d7bb704057236ea8163739.png)
+* ![alt text](https://i.paste.pics/2972eb62ce68f93669ad3797cc7eeb38.png)
+* ![alt text](https://i.paste.pics/9cf5ee63fa3d3f7f7022ca139f8619e3.png)
 
 ## **Website**
 
- https://liamhbradley11.github.io/password-generator/
+ https://liamhbradley11.github.io/Code-Quiz/
 
 ## **Authors**
 
