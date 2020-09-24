@@ -15,8 +15,10 @@
    
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <span class="navbar-brand mb-0 h1">Time Left: <span id="timerDisplay"></span></span>
+    <header>
+        <h3><span class="timer">Time Left: <span id="timerDisplay"></span></span></h3>
+        <br>
+        <br>
         <button type="button" class="button glow-button" id="viewHighScore">High Scores</button>
     </nav>
     <main class="container">
@@ -24,32 +26,35 @@
             <div class="col d-flex">
                 <div class="card mx-auto mt-5 text-center" style="width: 50rem" id="start">
                     <div class="card-body">
-                        <h5 class="card-text">Are you the ultimate Ariana Grande fan?</h5>
-                        <p class="bg-light text-black-50">Test your knowledge on all things Ariana!</p>
-                        <button type="button" class="button glow-button" id="start-btn">Start Quiz!</button>
+                        <h2 class="card-text">Are you the ultimate Ariana Grande fan?</h2>
+                        <p>Test your knowledge on all things Ariana!</p>
+                        <p>You have 45 seconds to answer 4 questions.</p>
+                        <p>For every correct answer you get 10pts!</p>
+                        <p>For every wrong answer you get 10 seconds subtracted from your time!</p>
+                        <button type="button" class="button glow-button" id="start-btn">Start!</button>
                     </div>
                 </div>
                 <div class="card mx-auto mt-5" style="width: 50rem" id="question-pg">
                     <div class="card-body">
                         <h5 class="card-title text-center">Ariana Grande Quiz</h5>
                         <p class="card-text text-center" id="question">Quiz questions</p>
-                        <button type="button" class="button glow-button" id="optionA">Answer A</button>
+                        <div class="center"><button type="button" class="button glow-button" id="optionA">Answer A</button></div>
                         <br>
                         <br>
-                        <button type="button" class="button glow-button" id="optionB">Answer B</button>
+                        <div class="center"><button type="button" class="button glow-button" id="optionB">Answer B</button></div>
                         <br>
                         <br>
-                        <button type="button" class="button glow-button" id="optionC">Answer C</button>
+                        <div class="center"><button type="button" class="button glow-button" id="optionC">Answer C</button></div>
                         <br>
                         <br>
-                        <button type="button" class="button glow-button" id="optionD">Answer D</button>
+                        <div class="center"><button type="button" class="button glow-button" id="optionD">Answer D</button></div>
                         <p class="card-text text-center" id="answerFlag"></p>
                     </div>
                 </div>
                 <!-- highscore initials -->
                 <div class="card mx-auto mt-5" style="width: 50rem" id="scorePage">
                     <div class="card-body mx-auto">
-                        <h5 class="card-title text-center">Join the High Score Board!</h5>
+                        <h5 class="card-title text-center">Ultimate Ariana Fans!</h5>
                         <p class="card-text text-center">Final Score <span id=score></span></p>
                         <form class="form-inline">
                             <div class="mx-auto">
@@ -73,7 +78,7 @@
                             <!-- <li class="list-group-item">Score/Name</li> -->
                         </ul>
                         <button class="button" id="goBack">Go Back</button>
-                        <button class="button" id="clearScore">Clear High Scores</button>
+                        <button class="button" id="clearScore">Clear</button>
                     </div>
                 </div>                          
             </div>

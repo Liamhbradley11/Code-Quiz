@@ -1,5 +1,6 @@
 var startPage = document.getElementById("start");
 var startButton = document.getElementById("start-btn")
+
 // for the questions 
 
 var qPage = document.getElementById("question-pg");
@@ -28,7 +29,7 @@ var viewHighScore = document.getElementById("viewHighScore");
 var timerDisplay = document.getElementById("timerDisplay");
 var answerFlag = document.getElementById("answerFlag");
 
-var totalSecondsAllowed = 60;
+var totalSecondsAllowed = 45;
 var secondsLeft;
 var timerHandle;
 var scoreCounter = 0;
@@ -74,12 +75,12 @@ var questionText = [
 ];
 
 
-// Set hidden pages to not display
+// set hidden pages to not display
 qPage.style.display = "none";
 scorePage.style.display = "none";
 highScorePage.style.display = "none";
 
-// Timer Functions
+// timer functions
 function setSecondsLeft(seconds) {
     secondsLeft = seconds;
     timerDisplay.textContent = secondsLeft;
@@ -92,13 +93,13 @@ function startTimer() {
         if (secondsLeft < 0) {
             timerDisplay.textContent = "0";
             clearInterval(timerHandle);
-            alert("You ran out of time!");
+            alert("Thank U, Next!");
             finishQuiz();
         }
     }, 1000);
 }
 
-// Start the quiz
+// start the quiz
 function startQuiz(){
     promptQuestion();
     startTimer();
@@ -120,10 +121,12 @@ function answerOnClick(answerId) {
     return function(event){
         if (questionText[currentIndex].correct === answerId) {
             scoreCounter = scoreCounter + 10;
-            answerFlag.textContent = "Yas Queen, you got it :)!";
+            alert("Yas Queen, you got it!");
+    
         } else {
-            setSecondsLeft(secondsLeft - 5);
-            answerFlag.textContent = "Sorry Queen, you're wrong :(";
+            setSecondsLeft(secondsLeft - 10);
+            alert("Sorry Queen, you're wrong.");
+            
         }
         currentIndex++;
         if (currentIndex < questionText.length) {

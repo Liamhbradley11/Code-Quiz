@@ -6,6 +6,35 @@ body {
 html {
     height: 100%
 }
+
+header {
+    padding: 20px;
+    font-family: 'Ranchers', cursive;
+}
+
+header h3 {
+    color: #d9dcd6;
+    display: inline-block;
+    font-size: 48px;
+}
+
+
+.navbar{
+    font-family: 'Ranchers', cursive;
+}
+
+.center{
+    text-align: center;
+}
+
+#viewhighscore {
+        position:   absolute;
+        top:        5px;
+        left:       5px;
+        text-align: right;
+    }
+
+
 .button {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.8);
@@ -21,42 +50,7 @@ html {
     box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
   }
 
-  .card-text {
+ .card-body {
     font-family: 'Ranchers', cursive;
-  }
 
-/* #start {
-    display: block;
 }
-
-#question1 {
-    display: none;
-}
-
-#question2 {
-    display: none;
-}
-
-#question3 {
-    display: none;
-}
-
-#question4 {
-    display: none;
-}
-
-#question5 {
-    display: none;
-}
-
-#scoreInitial {
-    display: none;
-}
-
-#highScore {
-    display: none;
-}
-
-#scoreList {
-    display: none;
-} */
