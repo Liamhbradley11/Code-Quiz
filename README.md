@@ -3,7 +3,7 @@
 
 ## **Description**
 
-Test your knowledge and find out if you are Ariana Grande's ultimate fan!  You have 45 seconds to answer 4 questions.  For every correct answer the player is awarded 10 points.  For ever incorrect answer 10 seconds is subtracted from the timer.  At the end of the game the player will be shown how many points they earned and add their name to the scoreboard.  If the timer runs out before you complete the game a message pops up and you are able to restart the game!  Be on the lookout for some fun alerts along the way!
+Test your knowledge and find out if you are Ariana Grande's ultimate fan!  You have 45 seconds to answer 4 questions.  For every correct answer the player is awarded 10 points.  For ever incorrect answer 10 seconds is subtracted from the timer.  At the end of the game the player will be shown how many points they earned and they can add their name to the scoreboard.  If the timer runs out before you complete the game a message pops up and you are able to restart the game!  Be on the lookout for some fun alerts along the way!
 
 ## **Tech/Framework Used**
 
